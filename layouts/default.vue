@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MyHeader from '@/components/public/header/index.vue'
+import MyHeader from '@/components/public/header/index'
 export default {
   components: {
     MyHeader
