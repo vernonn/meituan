@@ -157,7 +157,12 @@
             margin: 0 20px;
             cursor: pointer;
             position: relative;
-
+            &:first-of-type {
+              margin-left: 0px;
+            }
+            &:last-of-type {
+              margin-right: 0px;
+            }
             a {
               color: #222;
 
@@ -175,6 +180,9 @@
 
               &.business:hover {
                 color: #31BBAC;
+              }
+              &.gongyi:hover {
+                color: #f04d4e;
               }
             }
           }
