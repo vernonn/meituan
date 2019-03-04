@@ -21,6 +21,7 @@
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "koa": "^2.6.2",
+    "mongoose": "^5.4.17",
     "node-sass": "^4.11.0",
     "nuxt": "^2.4.0",
     "sass-loader": "^7.1.0"
