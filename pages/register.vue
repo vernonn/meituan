@@ -51,7 +51,7 @@
 <script>
 export default {
   layout: 'blank',
-  data () {
+  data() {
     return {
       statusMsg: '',
       error: '',
@@ -63,53 +63,58 @@ export default {
         email: ''
       },
       rules: {
-        name: [{
-          required: true,
-          type: 'string',
-          message: '请输入昵称',
-          trigger: 'blur'
-        }],
-        email: [{
-          required: true,
-          type: 'email',
-          message: '请输入邮箱',
-          trigger: 'blur'
-        }],
-        pwd: [{
-          required: true,
-          message: '创建密码',
-          trigger: 'blur'
-        }],
-        cpwd: [{
-          required: true,
-          message: '确认密码',
-          trigger: 'blur'
-        }, {
-          validator: (rule, value, callback) => {
-            if (value === '') {
-              callback(new Error('请再次输入密码'))
-            } else if (value !== this.ruleForm.pwd) {
-              callback(new Error('两次输入密码不一致'))
-            } else {
-              callback()
-            }
+        name: [
+          {
+            required: true,
+            type: 'string',
+            message: '请输入昵称',
+            trigger: 'blur'
+          }
+        ],
+        email: [
+          {
+            required: true,
+            type: 'email',
+            message: '请输入邮箱',
+            trigger: 'blur'
+          }
+        ],
+        pwd: [
+          {
+            required: true,
+            message: '创建密码',
+            trigger: 'blur'
+          }
+        ],
+        cpwd: [
+          {
+            required: true,
+            message: '确认密码',
+            trigger: 'blur'
           },
-          trigger: 'blur'
-        }]
+          {
+            validator: (rule, value, callback) => {
+              if (value === '') {
+                callback(new Error('请再次输入密码'))
+              } else if (value !== this.ruleForm.pwd) {
+                callback(new Error('两次输入密码不一致'))
+              } else {
+                callback()
+              }
+            },
+            trigger: 'blur'
+          }
+        ]
       }
     }
   },
   methods: {
-    sendMsg () {
-
-    },
-    register () {
-      
-    }
+    sendMsg() {},
+    register() {}
   }
 }
 </script>
 
 <style lang="scss">
-  @import '@/assets/css/register/index.scss';
+@import '@/assets/css/register/index.scss';
 </style>
