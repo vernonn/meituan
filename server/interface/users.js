@@ -12,6 +12,7 @@ let router = new Router({
 
 let Store = new Redis().client
 
+// 注册
 router.post('/signup', async (ctx) => {
   const {
     username,
@@ -73,18 +74,19 @@ router.post('/signup', async (ctx) => {
       }
     } else {
       ctx.body = {
-        code: -1
+        code: -1,
         msg: '写入失败'
       }
     }
   } else {
     ctx.body = {
-      code: -1
+      code: -1,
       msg: '注册失败'
     }
   }
 })
 
+// 登录
 router.post('/signin', async (ctx, next) => {
   return Passport.authenticate('local', function(err, user, info, status) {
     if (err) {
@@ -110,6 +112,7 @@ router.post('/signin', async (ctx, next) => {
   })(ctx, next)
 })
 
+// 验证
 router.post('/verify', async (ctx, next) => {
   let username = ctx.request.body.username
   const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
@@ -153,3 +156,35 @@ router.post('/verify', async (ctx, next) => {
     msg: '验证码已发送，可能会有延时，有效期一分钟'
   }
 })
+
+// 退出
+router.get('exit', async (ctx, next) => {
+  await ctx.logout()
+  if (!ctx.isAuthenticated()) {
+    ctx.body = {
+      code: 0
+    }
+  } else {
+    ctx.body = {
+      code: -1
+    }
+  }
+})
+
+// 获取用户信息
+router.get('/getUser', async (ctx) => {
+  if (ctx.isAuthenticated()) {
+    const {username, email} = ctx.session.passport.user
+    ctx.body = {
+      user: username,
+      email
+    }
+  } else {
+    ctx.body = {
+      user:'',
+      email:''
+    }
+  }
+})
+
+export default router
