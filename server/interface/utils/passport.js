@@ -24,7 +24,7 @@ passport.serializeUser(function(user, done) {
 })
 
 // 反序列化
-passport.deserialUser(function(user, done) {
+passport.deserializeUser(function(user, done) {
   return done(null, user)
 })
 
