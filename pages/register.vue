@@ -110,7 +110,7 @@ export default {
     }
   },
   methods: {
-    sendMsg: function () {
+    sendMsg() {
       const self = this;
       let namePass
       let emailPass
@@ -150,7 +150,7 @@ export default {
         })
       }
     },
-    register: function () {
+    register() {
       let self = this;
       this.$refs['ruleForm'].validate((valid) => {
         if (valid) {
