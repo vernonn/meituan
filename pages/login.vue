@@ -1,9 +1,7 @@
 <template>
   <div class="page-login">
     <div class="login-header">
-      <a
-        href="/"
-        class="logo"/>
+      <a href="/" class="logo"/>
     </div>
     <div class="login-panel">
       <div class="banner">
@@ -42,7 +40,7 @@
 <script>
 import CryptoJS from 'crypto-js'
 export default {
-  data: () => {
+  data() {
     return {
       checked: '',
       username: '',
@@ -54,18 +52,18 @@ export default {
   methods: {
     login() {
       let self=this;
-      self.$axios.post('/users/signin',{
+      self.$axios.post('/users/signin', {
         username:window.encodeURIComponent(self.username),
         password:CryptoJS.MD5(self.password).toString()
       }).then(({status,data})=>{
-        if(status===200){
-          if(data&&data.code===0){
-            location.href='/'
+        if(status === 200){
+          if(data && data.code === 0){
+            location.href = '/'
           }else{
-            self.error=data.msg
+            self.error = data.msg
           }
         }else{
-          self.error=`服务器出错`
+          self.error = '服务器出错'
         }
       })
     }
