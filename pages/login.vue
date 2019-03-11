@@ -51,20 +51,22 @@ export default {
   layout: 'blank',
   methods: {
     login() {
-      let self=this;
+      let self = this;
       self.$axios.post('/users/signin', {
-        username:window.encodeURIComponent(self.username),
-        password:CryptoJS.MD5(self.password).toString()
-      }).then(({status,data})=>{
-        if(status === 200){
-          if(data && data.code === 0){
+        username: window.encodeURIComponent(self.username),
+        password: CryptoJS.MD5(self.password).toString()
+      }).then(({status, data}) => {
+        if(status === 200) {
+          if(data && data.code === 0) {
             location.href = '/'
-          }else{
+          } else {
             self.error = data.msg
           }
-        }else{
+        } else {
           self.error = '服务器出错'
         }
+      }).catch(err => {
+        console.log(err)
       })
     }
   }
