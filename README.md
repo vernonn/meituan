@@ -9,7 +9,11 @@
 ## MongoDB
 1、安装MongoDB，开启redis-server.exe
 2、在data目录下新建db文件夹
-3、在安装目录下打开命令行，键入 `**安装地址**\bin\mongod --dbpath **安装地址**\data\db` 回车
+3、在安装目录下的\bin文件夹中打开命令行，键入 `**安装地址**\bin\mongod --dbpath **安装地址**\data\db` 回车
+
+### 数据库导入
+在数据源中打开命令行：`mongoimport -d dbs(数据库) -c test(数据结合) pois.dat(数据源)`
+例如：mongoimport -d meituan -c areas areas.dat
 
 ## 运行
 Redis和MongoDB以及相应依赖安装完毕后，即可npm run dev 或 yarn run dev
