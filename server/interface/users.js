@@ -162,4 +162,4 @@ router.get('/getUser', async (ctx) => {
   }
 })
 
-export default router
+export default router;
