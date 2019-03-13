@@ -8,8 +8,10 @@
         <life/>
       </el-col>
     </el-row>
-    <el-row :span="24">
-      
+    <el-row >
+      <el-col :span="24">
+        <artistic/>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -17,10 +19,12 @@
 <script>
 import MainMenu from '@/components/index/menu'
 import Life from '@/components/index/life'
+import Artistic from '@/components/index/artistic.vue'
 export default {
   components: {
     MainMenu,
-    Life
+    Life,
+    Artistic
   }
 }
 </script>
