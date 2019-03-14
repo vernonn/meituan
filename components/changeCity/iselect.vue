@@ -1,6 +1,6 @@
 <template>
   <div class="m-iselect">
-    <span class="name">按省份选择:</span>
+    <span class="name">按省份选择：</span>
     <el-select v-model="pvalue" placeholder="省份">
       <el-option
         v-for="item in province"
@@ -17,6 +17,7 @@
         :value="item.value"
       />
     </el-select>
+    <span class="name">直接搜索：</span>
     <el-autocomplete
       v-model="input"
       :fetch-suggestions="querySearchAsync"
@@ -94,7 +95,7 @@ export default {
         }
       }
     }, 200),
-    handleSelect: function(item) {
+    handleSelect(item) {
       console.log(item.value)
     }
   }

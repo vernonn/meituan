@@ -233,7 +233,7 @@
       </div>
       <div class="footer-copyright clearfix">
         <div class="footer-copyright-left">
-          <p>©网团购 meituan.com <a href="http://www.beianbeian.com/beianxinxi/283f39a9-4c00-427a-97ef-3c7a9e1e0af1.html">京ICP证070791号</a> <a href="http://www.miitbeian.gov.cn/">京ICP备10211739号</a> <a
+          <p>©美团网团购 meituan.com <a href="http://www.beianbeian.com/beianxinxi/283f39a9-4c00-427a-97ef-3c7a9e1e0af1.html">京ICP证070791号</a> <a href="http://www.miitbeian.gov.cn/">京ICP备10211739号</a> <a
             href="http://www.meituan.com/about/rules"
             target="_blank">电子公告服务规则</a></p><p><a
               href="http://i.meituan.com/brunch/default/right"
