@@ -1,4 +1,4 @@
-# Vue全家桶 + SSR(Nuxt) + Koa2全栈开发美团网
+# Vue全家桶 + SSR(Nuxt) + Koa2全栈开发[美团网]
 
 > My luminous Nuxt.js project
 
